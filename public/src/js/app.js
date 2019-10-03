@@ -1,8 +1,8 @@
 let deferredPrompt;
 
-if (!window.Promise) {
-  window.Promise = Promise;
-}
+// if (!window.Promise) {
+//   window.Promise = Promise;
+// }
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
@@ -29,50 +29,50 @@ window.addEventListener('beforeinstallprompt', (event) => {
 //   }, 3000);
 // });
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET','https://httpbin.org/ip');
-xhr.responseType = 'json';
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET','https://httpbin.org/ip');
+// xhr.responseType = 'json';
 
-xhr.onload = () => {
-  console.log(xhr.response);
-}
+// xhr.onload = () => {
+//   console.log(xhr.response);
+// }
 
-xhr.onerror = () => {
-  console.log('Error!');
-}
+// xhr.onerror = () => {
+//   console.log('Error!');
+// }
 
-xhr.send();
+// xhr.send();
 
-fetch('https://httpbin.org/ip')
-  .then((response) => {
-    console.log(response);
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// fetch('https://httpbin.org/ip')
+//   .then((response) => {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-fetch('https://httpbin.org/post', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  },
-  body: JSON.stringify({message: 'Does this really works?'})
-})
-  .then((response) => {
-    console.log(response);
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// fetch('https://httpbin.org/post', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Accept': 'application/json'
+//   },
+//   body: JSON.stringify({message: 'Does this really works?'})
+// })
+//   .then((response) => {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 // promise
 //   .then((text) => {
